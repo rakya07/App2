@@ -18,5 +18,5 @@ text1 = st.text_area("Text 1")
 text2 = st.text_area("Text 2")
 result = st.button("Compare")
 
-if text1 or text2 :
+if text1 and text2 :
     st.write("Similarity Score: ", question_answer(text1, text2))
