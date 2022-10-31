@@ -15,9 +15,10 @@ def question_answer(text1, text2): # Function to find similarity between two sen
     return norm_sim.item() # Returning the normalized similarity score
 
 st.subheader("Enter the two sentences to compare") # Subheader for the document
-text1 = st.text_area("Text 1")  # Input : Text area for the Sentence 1
-text2 = st.text_area("Text 2")  # Input : Text area for the Sentence 2
-result = st.button("Compare")   # Button to compare the two sentences
-
-if text1 and text2 : # Checking if both the sentences are entered
-    st.write("Similarity Score: ", question_answer(text1, text2))
+with st.form('form'):
+    text1 = st.text_area("Text 1")  # Input : Text area for the Sentence 1
+    text2 = st.text_area("Text 2")  # Input : Text area for the Sentence 2
+    result = st.form_submit_button("Compare")   # Button to compare the two sentences
+    if result:
+        st.write("Similarity Score: ", question_answer(text1, text2))
+    
