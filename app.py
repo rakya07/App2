@@ -1,8 +1,6 @@
 #Importing required libraries
 import streamlit as st  # For web development
 import requests
-from sentence_transformers import SentenceTransformer   # For Sentence embeddings
-from sklearn.metrics.pairwise import cosine_similarity  # For Cosine similarity between Embeddings
 
 st.title("Sentence Textual Similarity") # Document title
 API_URL = "https://api-inference.huggingface.co/models/sentence-transformers/stsb-mpnet-base-v2"
