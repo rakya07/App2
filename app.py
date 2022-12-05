@@ -9,6 +9,7 @@ load_dotenv()
 st.title("Sentence Textual Similarity") # Document title
 API_URL = "https://api-inference.huggingface.co/models/sentence-transformers/stsb-mpnet-base-v2"
 headers = {"Authorization": os.getenv('bearer')}
+# st.write(headers)
 def query(payload):
 	response = requests.post(API_URL, headers=headers, json=payload)
 	return response.json()
