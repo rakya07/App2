@@ -1,11 +1,15 @@
 #Importing required libraries
 import streamlit as st  # For web development
 import requests
-import config
+from dotenv import load_dotenv
+import os
+
+def configure():
+    load_dotenv()
 
 st.title("Sentence Textual Similarity") # Document title
 API_URL = "https://api-inference.huggingface.co/models/sentence-transformers/stsb-mpnet-base-v2"
-headers = {"Authorization": config.bearer}
+headers = {"Authorization": os.getenv('bearer')}
 def query(payload):
 	response = requests.post(API_URL, headers=headers, json=payload)
 	return response.json()
