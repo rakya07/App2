@@ -4,8 +4,7 @@ import requests
 from dotenv import load_dotenv
 import os
 
-def configure():
-    load_dotenv()
+load_dotenv()
 
 st.title("Sentence Textual Similarity") # Document title
 API_URL = "https://api-inference.huggingface.co/models/sentence-transformers/stsb-mpnet-base-v2"
